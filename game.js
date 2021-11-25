@@ -12,6 +12,7 @@ var config = {
     backgroundColor: 0x000000,
     scene: [Menu, Scene1, Scene2, GameOver],
     pixelArt: true,
+    autoCenter: true,
     physics: {
         default: "arcade",
         arcade:{

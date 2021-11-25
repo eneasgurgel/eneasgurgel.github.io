@@ -32,12 +32,12 @@ class Scene2 extends Phaser.Scene{
         this.police6 = this.add.sprite(550, 0, "police3");
         */
 
-        this.police1 = this.add.sprite(Phaser.Math.Between(200, 650), 0, "police1");
-        this.police2 = this.add.sprite(Phaser.Math.Between(200, 650), 0, "police2");
-        this.police3 = this.add.sprite(Phaser.Math.Between(200, 650), 0, "police3");
-        this.police4 = this.add.sprite(Phaser.Math.Between(200, 650), 0, "police1");
-        this.police5 = this.add.sprite(Phaser.Math.Between(200, 650), 0, "police2");
-       // this.police6 = this.add.sprite(Phaser.Math.Between(200, 650), 0, "police3");
+        this.police1 = this.add.sprite(Phaser.Math.Between(200, 650), Phaser.Math.Between(0, 200), "police1");
+        this.police2 = this.add.sprite(Phaser.Math.Between(200, 650), Phaser.Math.Between(0, 200), "police2");
+        this.police3 = this.add.sprite(Phaser.Math.Between(200, 650), Phaser.Math.Between(0, 200), "police3");
+        this.police4 = this.add.sprite(Phaser.Math.Between(200, 650), Phaser.Math.Between(0, 200), "police1");
+        this.police5 = this.add.sprite(Phaser.Math.Between(200, 650), Phaser.Math.Between(0, 200), "police2");
+        //this.police6 = this.add.sprite(Phaser.Math.Between(200, 650), 200, "police3");
     
         this.enemies = this.physics.add.group();
         this.enemies.add(this.police1);
@@ -121,10 +121,10 @@ class Scene2 extends Phaser.Scene{
     }
 
     movePlayer(){
-        if(this.cursorKeys.left.isDown){
+        if((this.cursorKeys.left.isDown) && (this.player.x > 200)){
             this.player.setVelocityX(-200);
             
-        }else if(this.cursorKeys.right.isDown){
+        }else if((this.cursorKeys.right.isDown) && (this.player.x < 650)){
             this.player.setVelocityX(200);
         } else {
             this.player.setVelocityX(0);
